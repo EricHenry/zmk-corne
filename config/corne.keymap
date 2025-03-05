@@ -20,6 +20,17 @@
             flavor = "tap-preferred";
             quick-tap-ms = <0>;
         };
+
+        cs: cs {
+            compatible = "zmk,behavior-hold-tap";
+            label = "CUSTOM_SHIFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "hold-preferred";
+            quick-tap-ms = <0>;
+        };
     };
 
     keymap {
@@ -33,10 +44,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp TAB        &kp Q           &kp W  &kp E  &kp R  &kp T             &kp Y            &kp U  &kp I      &kp O    &kp P                    &kp BSPC
-&hm LCTRL ESC  &hm LEFT_ALT A  &kp S  &kp D  &kp F  &hm LEFT_GUI G    &hm RIGHT_GUI H  &kp J  &kp K      &kp L    &hm RIGHT_ALT SEMICOLON  &hm RCTRL SQT
-&kp GRAVE      &kp Z           &kp X  &kp C  &kp V  &kp B             &kp N            &kp M  &kp COMMA  &kp DOT  &kp FSLH                 &kp BACKSLASH
-                                      &mo 1  &none  &kp SPACE         &kp ENTER        &none  &mo 2
+&kp TAB        &kp Q           &kp W  &kp E  &kp R                      &kp T             &kp Y            &kp U                        &kp I      &kp O    &kp P                    &kp BSPC
+&hm LCTRL ESC  &hm LEFT_ALT A  &kp S  &kp D  &kp F                      &hm LEFT_GUI G    &hm RIGHT_GUI H  &kp J                        &kp K      &kp L    &hm RIGHT_ALT SEMICOLON  &hm RCTRL SQT
+&kp GRAVE      &kp Z           &kp X  &kp C  &kp V                      &kp B             &kp N            &kp M                        &kp COMMA  &kp DOT  &kp FSLH                 &kp BACKSLASH
+                                      &mo 1  &cs LEFT_SHIFT LEFT_SHIFT  &kp SPACE         &kp ENTER        &cs RIGHT_SHIFT RIGHT_SHIFT  &mo 2
             >;
         };
 
