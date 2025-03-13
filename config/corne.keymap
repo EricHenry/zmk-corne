@@ -32,7 +32,7 @@
             quick-tap-ms = <0>;
         };
 
-        lt: lt {
+        mlt: mlt {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_BY_HOLD_TAP";
             bindings = <&mo>, <&kp>;
